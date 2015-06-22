@@ -1,0 +1,35 @@
+# AliAkbar
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class akber {
+
+	
+	public static void main(String[] args) {
+		
+	WebDriver f=new FirefoxDriver();
+	{
+	for(int a =1;a<5;a++){	
+	f.navigate().to("http://www.shophive.com/apple/mac?p="+a);
+	f.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	f.manage().window().maximize();
+	java.util.List <WebElement> productNames=f.findElements(By
+			.xpath("//div/div/h2/a"));
+	for(int i=0;i<productNames.size()-1; i++)
+	{
+		System.out.print("product Name"+ productNames.get(i).getText());
+		System.out.print("\n");
+		
+	}
+	System.out.println("+++++++++++++++++++++++++++");
+	}
+	f.close();}
+	
+	}
+	}
+
